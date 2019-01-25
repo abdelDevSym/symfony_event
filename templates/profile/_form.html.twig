@@ -1,0 +1,12 @@
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+
+
+{% if form.vars.value.avatar.filename is defined %}
+
+    <img width="300px" src="{{ asset('/uploads/avatars/') ~ form.vars.value.avatar.filename }}" alt="">
+
+{% endif %}
+
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
